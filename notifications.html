@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCANGATE - Notifications & Alerts</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Desktop Layout Wrapper -->
+  <div class="desktop-layout-wrapper">
+    
+    <!-- Desktop Sidebar -->
+    <aside class="desktop-sidebar">
+      <div class="desktop-brand">SCANGATE</div>
+      <a href="index.html" class="sidebar-nav-item">🏠 Home</a>
+      <a href="search.html" class="sidebar-nav-item">🔍 Search</a>
+      <a href="report.html" class="sidebar-nav-item">⚠️ Report</a>
+      <a href="dispute.html" class="sidebar-nav-item">⚖️ Dispute</a>
+      <a href="notifications.html" class="sidebar-nav-item active">🔔 Alerts</a>
+      <a href="profile.html" class="sidebar-nav-item">👤 Profile</a>
+      <a href="settings.html" class="sidebar-nav-item">⚙️ Settings</a>
+    </aside>
+
+    <!-- App Container -->
+    <div class="app-container">
+      
+      <!-- Sticky Header -->
+      <header class="top-header">
+        <div class="brand-title">Alerts & Updates</div>
+        <div class="header-icons">
+          <span onclick="location.href='notifications.html'" aria-label="Notifications" role="button">🔔</span>
+          <span onclick="location.href='profile.html'" aria-label="User Profile" role="button">👤</span>
+        </div>
+      </header>
+
+      <!-- Scrollable Content -->
+      <main class="content-scrollable">
+        
+        <div class="flex-between mb-20">
+          <h2 style="font-size: 1.1rem; margin-bottom: 0;">Recent Alerts</h2>
+          <button class="btn-secondary" style="font-size: 0.75rem; padding: 4px 10px;" onclick="alert('All marked as read!')">Mark all as read</button>
+        </div>
+
+        <!-- Notification List Container -->
+        <div id="notifications-list">
+          
+          <!-- Unread Report Status Update Card -->
+          <div class="sc-card mb-15" style="border-left: 4px solid var(--accent-primary);">
+            <div class="flex-between mb-10">
+              <span class="badge badge-high">Report Verified</span>
+              <span class="text-muted" style="font-size: 0.75rem;">2 hours ago</span>
+            </div>
+            <div style="font-size: 0.9rem; font-weight: 600; margin-bottom: 4px;">Your report for scammer@upi was verified</div>
+            <div class="text-muted" style="font-size: 0.8rem; line-height: 1.4;">
+              SCANGATE moderation team has reviewed your evidence and updated the risk status to High Risk.
+            </div>
+          </div>
+
+          <!-- Read Dispute Update Card -->
+          <div class="sc-card mb-15" style="opacity: 0.8;">
+            <div class="flex-between mb-10">
+              <span class="badge badge-medium">Dispute Under Review</span>
+              <span class="text-muted" style="font-size: 0.75rem;">Yesterday</span>
+            </div>
+            <div style="font-size: 0.9rem; font-weight: 600; margin-bottom: 4px;">Counter-claim received for SCG-94821</div>
+            <div class="text-muted" style="font-size: 0.8rem; line-height: 1.4;">
+              Your dispute is currently queued for manual verification by senior security analysts.
+            </div>
+          </div>
+
+          <!-- Watchlist Alert Card -->
+          <div class="sc-card mb-15" style="opacity: 0.8;">
+            <div class="flex-between mb-10">
+              <span class="badge badge-high">Watchlist Alert</span>
+              <span class="text-muted" style="font-size: 0.75rem;">3 days ago</span>
+            </div>
+            <div style="font-size: 0.9rem; font-weight: 600; margin-bottom: 4px;">New report on watched identifier</div>
+            <div class="text-muted" style="font-size: 0.8rem; line-height: 1.4;">
+              An identifier in your watchlist (+91 98765 XXXXX) has received a new community report.
+            </div>
+          </div>
+
+        </div>
+
+      </main>
+
+      <!-- Mobile Bottom Navigation -->
+      <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+          <span class="nav-icon">🏠</span>
+          <span>Home</span>
+        </a>
+        <a href="search.html" class="nav-item">
+          <span class="nav-icon">🔍</span>
+          <span>Search</span>
+        </a>
+        <a href="report.html" class="nav-item">
+          <span class="nav-icon">＋</span>
+          <span>Report</span>
+        </a>
+        <a href="dispute.html" class="nav-item">
+          <span class="nav-icon">⚖️</span>
+          <span>Dispute</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+          <span class="nav-icon">👤</span>
+          <span>Profile</span>
+        </a>
+      </nav>
+
+    </div>
+  </div>
+
+</body>
+</html>

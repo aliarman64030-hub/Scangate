@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCANGATE - Dispute a Report</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Desktop Layout Wrapper -->
+  <div class="desktop-layout-wrapper">
+
+    <!-- Desktop Sidebar -->
+    <aside class="desktop-sidebar">
+      <div class="desktop-brand">SCANGATE</div>
+      <a href="index.html" class="sidebar-nav-item">🏠 Home</a>
+      <a href="search.html" class="sidebar-nav-item">🔍 Search</a>
+      <a href="report.html" class="sidebar-nav-item">⚠️ Report</a>
+      <a href="dispute.html" class="sidebar-nav-item active">⚖️ Dispute</a>
+      <a href="notifications.html" class="sidebar-nav-item">🔔 Alerts</a>
+      <a href="profile.html" class="sidebar-nav-item">👤 Profile</a>
+      <a href="settings.html" class="sidebar-nav-item">⚙️ Settings</a>
+    </aside>
+
+    <!-- App Container -->
+    <div class="app-container">
+
+      <!-- Sticky Header -->
+      <header class="top-header">
+        <div class="brand-title">Dispute a Report</div>
+        <div class="header-icons">
+          <span onclick="location.href='notifications.html'" aria-label="Notifications" role="button">🔔</span>
+          <span onclick="location.href='profile.html'" aria-label="User Profile" role="button">👤</span>
+        </div>
+      </header>
+
+      <!-- Scrollable Content -->
+      <main class="content-scrollable">
+
+        <div style="margin-bottom: 20px;">
+          <h2 style="font-size: 1.1rem; margin-bottom: 4px;">Counter-Claim & Review</h2>
+          <p class="text-muted" style="font-size: 0.85rem;">Submit a dispute if you believe a report against your identifier is incorrect.</p>
+        </div>
+
+        <form id="dispute-form">
+
+          <!-- Report ID -->
+          <div class="form-group">
+            <label class="form-label">Report ID / Reference</label>
+            <input type="text" class="form-input" id="dispute-report-id" placeholder="Enter SCG-XXXXXXXX" required>
+          </div>
+
+          <!-- Target Identifier -->
+          <div class="form-group">
+            <label class="form-label">Affected Identifier</label>
+            <input type="text" class="form-input" id="dispute-target" placeholder="Enter your UPI / Phone / Email" required>
+          </div>
+
+          <!-- Dispute Reason -->
+          <div class="form-group">
+            <label class="form-label">Reason for Dispute</label>
+            <select class="form-select" id="dispute-reason">
+              <option value="false_report">False or Malicious Report</option>
+              <option value="identity_mistake">Wrong / Mistaken Identity</option>
+              <option value="issue_resolved">Matter Resolved with Claimant</option>
+              <option value="other">Other Legitimate Reason</option>
+            </select>
+          </div>
+
+          <!-- Explanation -->
+          <div class="form-group">
+            <label class="form-label">Explanation</label>
+            <textarea class="form-textarea" id="dispute-explanation" placeholder="Provide relevant details or context explaining why this report should be reviewed..." required></textarea>
+          </div>
+
+          <!-- Supporting Evidence Upload -->
+          <div class="form-group">
+            <label class="form-label">Supporting Evidence</label>
+            <div class="file-upload-box" onclick="document.getElementById('dispute-file').click()">
+              <div style="font-size: 1.5rem;">📁</div>
+              <div class="file-upload-text">Click to Upload Supporting Proof (PDFs / Images)</div>
+              <input type="file" id="dispute-file" class="hidden" multiple accept="image/*,application/pdf">
+            </div>
+            <div id="dispute-file-list" class="text-muted mt-10" style="font-size: 0.75rem;"></div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn-primary mt-20">SUBMIT COUNTER-CLAIM</button>
+
+          <div class="sc-card mt-20" style="background-color: var(--bg-card); text-align: center;">
+            <div style="font-size: 0.8rem; color: var(--text-muted);">Current Status</div>
+            <div style="font-size: 0.9rem; font-weight: 600; color: var(--risk-med-text); margin-top: 4px;">Pending Review</div>
+          </div>
+
+        </form>
+
+      </main>
+
+      <!-- Mobile Bottom Navigation -->
+      <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+          <span class="nav-icon">🏠</span>
+          <span>Home</span>
+        </a>
+        <a href="search.html" class="nav-item">
+          <span class="nav-icon">🔍</span>
+          <span>Search</span>
+        </a>
+        <a href="report.html" class="nav-item">
+          <span class="nav-icon">＋</span>
+          <span>Report</span>
+        </a>
+        <a href="dispute.html" class="nav-item active">
+          <span class="nav-icon">⚖️</span>
+          <span>Dispute</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+          <span class="nav-icon">👤</span>
+          <span>Profile</span>
+        </a>
+      </nav>
+
+    </div>
+  </div>
+
+</body>
+</html>

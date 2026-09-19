@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCANGATE - User Profile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Desktop Layout Wrapper -->
+  <div class="desktop-layout-wrapper">
+    
+    <!-- Desktop Sidebar -->
+    <aside class="desktop-sidebar">
+      <div class="desktop-brand">SCANGATE</div>
+      <a href="index.html" class="sidebar-nav-item">🏠 Home</a>
+      <a href="search.html" class="sidebar-nav-item">🔍 Search</a>
+      <a href="report.html" class="sidebar-nav-item">⚠️ Report</a>
+      <a href="dispute.html" class="sidebar-nav-item">⚖️ Dispute</a>
+      <a href="notifications.html" class="sidebar-nav-item">🔔 Alerts</a>
+      <a href="profile.html" class="sidebar-nav-item active">👤 Profile</a>
+      <a href="settings.html" class="sidebar-nav-item">⚙️ Settings</a>
+    </aside>
+
+    <!-- App Container -->
+    <div class="app-container">
+      
+      <!-- Sticky Header -->
+      <header class="top-header">
+        <div class="brand-title">My Account</div>
+        <div class="header-icons">
+          <span onclick="location.href='notifications.html'" aria-label="Notifications" role="button">🔔</span>
+          <span onclick="location.href='profile.html'" aria-label="User Profile" role="button">👤</span>
+        </div>
+      </header>
+
+      <!-- Scrollable Content -->
+      <main class="content-scrollable">
+        
+        <!-- User Info Card -->
+        <div class="sc-card mb-20" style="text-align: center;">
+          <div style="width: 60px; height: 60px; background-color: var(--bg-deep); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; font-size: 1.5rem;">👤</div>
+          <div id="user-profile-name" style="font-size: 1.05rem; font-weight: 600; margin-bottom: 4px;">User Account</div>
+          <div id="user-profile-email" class="text-muted" style="font-size: 0.85rem; margin-bottom: 12px;">user@example.com</div>
+          <span class="badge badge-medium" id="user-tier-badge">Free Plan</span>
+        </div>
+
+        <!-- Pro Upgrade Banner (If Free Tier) -->
+        <div class="pro-banner mb-20">
+          <h3>SCANGATE Pro</h3>
+          <p>Get unlimited verifications, priority report handling, and advanced intelligence.</p>
+          <button onclick="alert('Redirecting to Pro Checkout...')">Upgrade Plan</button>
+        </div>
+
+        <!-- Account Statistics / Quick Links -->
+        <div class="section-title">My Activity</div>
+        
+        <div class="sc-card mb-15" style="cursor: pointer;" onclick="alert('Opening user reports history...')">
+          <div class="flex-between">
+            <span style="font-weight: 600; font-size: 0.9rem;">My Submitted Reports</span>
+            <span class="text-muted">→</span>
+          </div>
+        </div>
+
+        <div class="sc-card mb-15" style="cursor: pointer;" onclick="alert('Opening watchlist...')">
+          <div class="flex-between">
+            <span style="font-weight: 600; font-size: 0.9rem;">Watchlist Identifiers</span>
+            <span class="text-muted">→</span>
+          </div>
+        </div>
+
+        <div class="sc-card mb-20" style="cursor: pointer;" onclick="alert('Opening active disputes...')">
+          <div class="flex-between">
+            <span style="font-weight: 600; font-size: 0.9rem;">My Disputes & Counter-Claims</span>
+            <span class="text-muted">→</span>
+          </div>
+        </div>
+
+        <!-- Logout Button -->
+        <button class="btn-secondary" style="color: var(--risk-high-text); border-color: var(--risk-high-border);" onclick="alert('Logging out...')">Sign Out</button>
+
+      </main>
+
+      <!-- Mobile Bottom Navigation -->
+      <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+          <span class="nav-icon">🏠</span>
+          <span>Home</span>
+        </a>
+        <a href="search.html" class="nav-item">
+          <span class="nav-icon">🔍</span>
+          <span>Search</span>
+        </a>
+        <a href="report.html" class="nav-item">
+          <span class="nav-icon">＋</span>
+          <span>Report</span>
+        </a>
+        <a href="dispute.html" class="nav-item">
+          <span class="nav-icon">⚖️</span>
+          <span>Dispute</span>
+        </a>
+        <a href="profile.html" class="nav-item active">
+          <span class="nav-icon">👤</span>
+          <span>Profile</span>
+        </a>
+      </nav>
+
+    </div>
+  </div>
+
+</body>
+</html>

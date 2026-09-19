@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCANGATE - Upgrade to Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="desktop-layout-wrapper">
+    <aside class="desktop-sidebar">
+      <div class="desktop-brand">SCANGATE</div>
+      <a href="index.html" class="sidebar-nav-item">🏠 Home</a>
+      <a href="search.html" class="sidebar-nav-item">🔍 Search</a>
+      <a href="report.html" class="sidebar-nav-item">⚠️ Report</a>
+      <a href="dispute.html" class="sidebar-nav-item">⚖️ Dispute</a>
+      <a href="notifications.html" class="sidebar-nav-item">🔔 Alerts</a>
+      <a href="profile.html" class="sidebar-nav-item">👤 Profile</a>
+      <a href="settings.html" class="sidebar-nav-item">⚙️ Settings</a>
+    </aside>
+
+    <div class="app-container">
+      <header class="top-header">
+        <div class="brand-title">Upgrade to Pro</div>
+        <div class="header-icons">
+          <span onclick="location.href='notifications.html'">🔔</span>
+          <span onclick="location.href='profile.html'">👤</span>
+        </div>
+      </header>
+
+      <main class="content-scrollable">
+        <div style="margin-bottom: 20px; text-align: center;">
+          <h2 style="font-size: 1.2rem; margin-bottom: 4px;">Unlock Unlimited Intelligence</h2>
+          <p class="text-muted" style="font-size: 0.85rem;">Get unlimited global lookups, priority dispute reviews, and advanced security tools.</p>
+        </div>
+
+        <!-- Pricing Cards -->
+        <div class="sc-card mb-20" style="border: 2px solid var(--accent); text-align: center;">
+          <span class="badge badge-high" style="margin-bottom: 8px; display: inline-block;">Most Popular</span>
+          <div style="font-size: 1.1rem; font-weight: 600; margin-bottom: 4px;">SCANGATE Pro Pass</div>
+          <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent); margin-bottom: 12px;">₹149 <span style="font-size: 0.8rem; font-weight: 400; color: var(--text-muted);">/ month ($4 USD)</span></div>
+          <p class="text-muted" style="font-size: 0.8rem; line-height: 1.4; margin-bottom: 15px;">
+            Full access to real-time verification databases, priority community alerts, and zero lookup restrictions.
+          </p>
+        </div>
+
+        <!-- Manual GPay / UPI Upgrade Section -->
+        <div class="sc-card mb-20" style="text-align: center; border: 1px dashed var(--accent);">
+          <h3 style="font-size: 1rem; margin-bottom: 8px;">Direct UPI / GPay Payment</h3>
+          <p class="text-muted" style="font-size: 0.8rem; margin-bottom: 12px;">
+            Pay ₹149 via GPay/UPI to the ID below, then submit your transaction reference. Account will be upgraded within 24-48 hours after verification.
+          </p>
+
+          <div style="font-weight: 600; font-size: 0.950rem; color: var(--accent); margin-bottom: 12px; background: var(--bg-surface); padding: 8px; border-radius: 6px;">
+            UPI ID: <span id="my-upi-id">Aglbacshhussen@oksbi</span>
+          </div>
+
+          <div class="form-group" style="text-align: left;">
+            <label class="form-label">Enter UPI Transaction ID (UTR / Reference Number)</label>
+            <input type="text" id="manual-utr-input" class="form-input" placeholder="e.g., 3421XXXXXXXX" required>
+          </div>
+
+          <button class="btn-primary" id="submit-utr-btn" onclick="submitManualPayment()">Submit for Verification</button>
+        </div>
+      </main>
+
+      <nav class="bottom-nav">
+        <a href="index.html" class="nav-item"><span class="nav-icon">🏠</span><span>Home</span></a>
+        <a href="search.html" class="nav-item"><span class="nav-icon">🔍</span><span>Search</span></a>
+        <a href="report.html" class="nav-item"><span class="nav-icon">＋</span><span>Report</span></a>
+        <a href="dispute.html" class="nav-item"><span class="nav-icon">⚖️</span><span>Dispute</span></a>
+        <a href="profile.html" class="nav-item"><span class="nav-icon">👤</span><span>Profile</span></a>
+      </nav>
+    </div>
+  </div>
+
+  <script type="module">
+    import { auth, db } from './firebase-config.js';
+    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+    import { collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+    let currentUser = null;
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        currentUser = user;
+      } else {
+        // Agar login nahi hai toh auth page par bhej dein
+        window.location.href = "auth.html";
+      }
+    });
+
+    window.submitManualPayment = async function() {
+      const utr = document.getElementById('manual-utr-input').value.trim();
+      if (!utr) {
+        alert('Please enter a valid Transaction ID / UTR.');
+        return;
+      }
+
+      if (!currentUser) {
+        alert('Please login first to submit payment reference.');
+        return;
+      }
+
+      const btn = document.getElementById('submit-utr-btn');
+      btn.innerText = "Submitting...";
+      btn.disabled = true;
+
+      try {
+        // Firestore mein manualPayments collection ke andar UTR save hoga
+        await addDoc(collection(db, "manualPayments"), {
+          uid: currentUser.uid,
+          email: currentUser.email,
+          utrNumber: utr,
+          status: "pending", // admin verify karke 'approved' karega
+          createdAt: serverTimestamp()
+        });
+
+        alert('Payment reference submitted successfully! Your account will be upgraded within 24-48 hours after manual verification.');
+        window.location.href = 'index.html';
+      } catch (error) {
+        console.error("UTR submission error:", error);
+        alert('Failed to submit reference. Please try again.');
+        btn.innerText = "Submit for Verification";
+        btn.disabled = false;
+      }
+    }
+  </script>
+</body>
+</html>

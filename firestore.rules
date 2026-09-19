@@ -1,0 +1,54 @@
+rules_version = '2';
+
+service cloud.firestore {
+
+  match /databases/{database}/documents {
+
+    // ==========================================
+    // USER PROFILES
+    // ==========================================
+    match /users/{userId} {
+
+      // User can read only their own profile
+      allow read: if request.auth != null
+                  && request.auth.uid == userId;
+
+      // User can create only their own profile
+      // Every new account starts with "free"
+      allow create: if request.auth != null
+                    && request.auth.uid == userId
+                    && request.resource.data.uid == request.auth.uid
+                    && request.resource.data.tier == "free";
+
+      // User can update only their own profile
+      // uid and tier cannot be changed by the client
+      allow update: if request.auth != null
+                    && request.auth.uid == userId
+                    && request.resource.data.uid == resource.data.uid
+                    && request.resource.data.tier == resource.data.tier;
+
+      // Profile deletion is disabled from the client
+      allow delete: if false;
+    }
+
+
+    // ==========================================
+    // PUBLIC REPORTS
+    // ==========================================
+    match /Public_Reports/{document} {
+
+      // Anyone can read public reports
+      allow read: if true;
+
+      // Logged-in users can submit reports
+      allow create: if request.auth != null;
+
+      // Prevent users from modifying existing reports
+      // until a proper moderation/ownership system exists
+      allow update: if false;
+
+      // Prevent client-side deletion
+      allow delete: if false;
+    }
+  }
+}

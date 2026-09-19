@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCANGATE - Verify & Protect</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Desktop Layout Wrapper (Visible on Large Screens) -->
+  <div class="desktop-layout-wrapper">
+
+    <!-- Desktop Sidebar -->
+    <aside class="desktop-sidebar">
+      <div class="desktop-brand">SCANGATE</div>
+      <a href="index.html" class="sidebar-nav-item active">🏠 Home</a>
+      <a href="search.html" class="sidebar-nav-item">🔍 Search</a>
+      <a href="report.html" class="sidebar-nav-item">⚠️ Report</a>
+      <a href="dispute.html" class="sidebar-nav-item">⚖️ Dispute</a>
+      <a href="notifications.html" class="sidebar-nav-item">🔔 Alerts</a>
+      <a href="profile.html" class="sidebar-nav-item">👤 Profile</a>
+      <a href="settings.html" class="sidebar-nav-item">⚙️ Settings</a>
+    </aside>
+
+    <!-- Main Mobile/App Container Viewport -->
+    <div class="app-container">
+
+      <!-- Top Sticky Header -->
+      <header class="top-header">
+        <div class="brand-title">SCANGATE</div>
+        <div class="header-icons">
+          <span onclick="location.href='notifications.html'">🔔</span>
+          <span onclick="location.href='profile.html'">👤</span>
+        </div>
+      </header>
+
+      <!-- Scrollable Main Content -->
+      <main class="content-scrollable">
+
+        <!-- Search Trigger Bar -->
+        <div class="search-box-container" onclick="location.href='search.html'" style="cursor: pointer;">
+          <span style="padding-left: 8px; color: var(--text-muted);">🔍</span>
+          <input type="text" class="search-input" placeholder="Search anything (UPI, Phone, Email)..." readonly style="cursor: pointer;">
+        </div>
+
+        <!-- Quick Check Section -->
+        <div class="section-title">Quick Check</div>
+        <div class="quick-check-grid">
+          <div class="quick-check-card" onclick="location.href='search.html?type=upi'">
+            <span>UPI</span>
+          </div>
+          <div class="quick-check-card" onclick="location.href='search.html?type=phone'">
+            <span>Phone</span>
+          </div>
+          <div class="quick-check-card" onclick="location.href='search.html?type=email'">
+            <span>Email</span>
+          </div>
+        </div>
+
+        <!-- Pro Upgrade Banner -->
+        <div class="pro-banner">
+          <h3>Upgrade to SCANGATE Pro</h3>
+          <p>Unlock advanced security lookups, unlimited searches & priority reports.</p>
+          <button onclick="location.href='profile.html'">Upgrade Now</button>
+        </div>
+
+        <!-- Recent / Community Activity Feed -->
+        <div class="section-title">Recent Community Reports</div>
+
+        <!-- High Risk Card Example -->
+        <div class="sc-card">
+          <div class="flex-between mb-20">
+            <span class="badge badge-high">Verified Risk</span>
+            <span class="text-muted" style="font-size: 0.75rem;">12 reports</span>
+          </div>
+          <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 6px;">scammer@example.com</div>
+          <div class="text-muted" style="font-size: 0.8rem; margin-bottom: 12px;">Category: Payment & Phishing Scam</div>
+          <div class="risk-meter-bar"><div class="risk-meter-fill high"></div></div>
+          <button class="btn-secondary mt-10" style="font-size: 0.85rem; padding: 8px;" onclick="location.href='search.html?q=scammer@example.com'">View Details →</button>
+        </div>
+
+        <!-- Medium Risk / Under Review Card Example -->
+        <div class="sc-card">
+          <div class="flex-between mb-20">
+            <span class="badge badge-medium">Under Review</span>
+            <span class="text-muted" style="font-size: 0.75rem;">Pending</span>
+          </div>
+          <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 6px;">+91 98765 XXXXX</div>
+          <div class="text-muted" style="font-size: 0.8rem; margin-bottom: 12px;">Community report under investigation</div>
+          <div class="risk-meter-bar"><div class="risk-meter-fill medium"></div></div>
+          <button class="btn-secondary mt-10" style="font-size: 0.85rem; padding: 8px;" onclick="location.href='search.html'">View Details →</button>
+        </div>
+
+      </main>
+
+      <!-- Fixed Mobile Bottom Navigation -->
+      <nav class="bottom-nav">
+        <a href="index.html" class="nav-item active">
+          <span class="nav-icon">🏠</span>
+          <span>Home</span>
+        </a>
+        <a href="search.html" class="nav-item">
+          <span class="nav-icon">🔍</span>
+          <span>Search</span>
+        </a>
+        <a href="report.html" class="nav-item">
+          <span class="nav-icon">＋</span>
+          <span>Report</span>
+        </a>
+        <a href="dispute.html" class="nav-item">
+          <span class="nav-icon">⚖️</span>
+          <span>Dispute</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+          <span class="nav-icon">👤</span>
+          <span>Profile</span>
+        </a>
+      </nav>
+
+    </div>
+  </div>
+
+</body>
+</html>

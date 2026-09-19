@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCANGATE - Search & Verify</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Desktop Layout Wrapper -->
+  <div class="desktop-layout-wrapper">
+
+    <!-- Desktop Sidebar -->
+    <aside class="desktop-sidebar">
+      <div class="desktop-brand">SCANGATE</div>
+      <a href="index.html" class="sidebar-nav-item">🏠 Home</a>
+      <a href="search.html" class="sidebar-nav-item active">🔍 Search</a>
+      <a href="report.html" class="sidebar-nav-item">⚠️ Report</a>
+      <a href="dispute.html" class="sidebar-nav-item">⚖️ Dispute</a>
+      <a href="notifications.html" class="sidebar-nav-item">🔔 Alerts</a>
+      <a href="profile.html" class="sidebar-nav-item">👤 Profile</a>
+      <a href="settings.html" class="sidebar-nav-item">⚙️ Settings</a>
+    </aside>
+
+    <!-- App Container -->
+    <div class="app-container">
+
+      <!-- Sticky Header -->
+      <header class="top-header">
+        <div class="brand-title">Verify Identifier</div>
+        <div class="header-icons">
+          <span onclick="location.href='notifications.html'" aria-label="Notifications" role="button">🔔</span>
+          <span onclick="location.href='profile.html'" aria-label="User Profile" role="button">👤</span>
+        </div>
+      </header>
+
+      <!-- Scrollable Content -->
+      <main class="content-scrollable">
+
+        <!-- Search Input Section -->
+        <div class="search-wrapper">
+          <div class="form-label">What do you want to verify?</div>
+
+          <!-- Type Selector Chips -->
+          <div class="type-selector-grid mb-20">
+            <div class="type-chip active" data-type="upi">UPI</div>
+            <div class="type-chip" data-type="phone">Phone</div>
+            <div class="type-chip" data-type="email">Email</div>
+            <div class="type-chip" data-type="website">Website</div>
+          </div>
+
+          <!-- Search Form Bar -->
+          <div class="search-box-container mb-20">
+            <span style="padding-left: 8px; color: var(--text-muted);">🔍</span>
+            <input type="text" id="search-input-field" class="search-input" placeholder="Enter identifier (e.g. UPI ID, Phone)...">
+          </div>
+
+          <button id="search-action-btn" class="btn-primary mb-20">CHECK NOW</button>
+        </div>
+
+        <!-- Verification Results Container (Initially Hidden / State-Based) -->
+        <div id="result-container" class="hidden">
+
+          <!-- High Risk State Example -->
+          <div id="result-high" class="sc-card hidden">
+            <div class="flex-between mb-20">
+              <span class="badge badge-high">Verified Risk</span>
+              <span class="text-muted" style="font-size: 0.75rem;">Risk Level: HIGH</span>
+            </div>
+            <div id="target-identifier-display" style="font-weight: 600; font-size: 1.1rem; margin-bottom: 8px;">scammer@upi</div>
+
+            <div class="risk-meter-bar mb-20">
+              <div class="risk-meter-fill high"></div>
+            </div>
+
+            <div class="text-muted" style="font-size: 0.85rem; margin-bottom: 16px;">
+              Total Reports: <strong>12</strong> | Verified Reports: <strong>8</strong>
+            </div>
+
+            <!-- Report Breakdown Card -->
+            <div class="sc-card" style="background-color: var(--bg-deep); margin-bottom: 16px;">
+              <div style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted); margin-bottom: 4px;">REPORT #1</div>
+              <div style="font-size: 0.9rem; margin-bottom: 4px;">Category: Payment Scam</div>
+              <div style="font-size: 0.8rem; color: var(--risk-high-text);">Status: Verified Risk</div>
+            </div>
+
+            <button class="btn-secondary mb-20" onclick="alert('Added to watchlist!')">＋ Add to Watchlist</button>
+          </div>
+
+          <!-- Low / Safe Disclaimer State (No Verified Risk Found) -->
+          <div id="result-safe" class="sc-card hidden" style="border-color: var(--risk-low-border);">
+            <div class="flex-between mb-20">
+              <span class="badge badge-low">No Verified Risk Found</span>
+              <span class="text-muted" style="font-size: 0.75rem;">Risk Level: LOW</span>
+            </div>
+            <div style="font-weight: 600; font-size: 1.1rem; margin-bottom: 12px;">Identifier appears clean</div>
+
+            <div class="risk-meter-bar mb-20">
+              <div class="risk-meter-fill low"></div>
+            </div>
+
+            <p class="text-muted" style="font-size: 0.85rem; line-height: 1.4;">
+              ⚠ No database result can guarantee an identifier is safe. Proceed with caution on financial transactions.
+            </p>
+          </div>
+
+        </div>
+
+      </main>
+
+      <!-- Mobile Bottom Navigation -->
+      <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+          <span class="nav-icon">🏠</span>
+          <span>Home</span>
+        </a>
+        <a href="search.html" class="nav-item active">
+          <span class="nav-icon">🔍</span>
+          <span>Search</span>
+        </a>
+        <a href="report.html" class="nav-item">
+          <span class="nav-icon">＋</span>
+          <span>Report</span>
+        </a>
+        <a href="dispute.html" class="nav-item">
+          <span class="nav-icon">⚖️</span>
+          <span>Dispute</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+          <span class="nav-icon">👤</span>
+          <span>Profile</span>
+        </a>
+      </nav>
+
+    </div>
+  </div>
+
+</body>
+</html>

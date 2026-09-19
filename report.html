@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCANGATE - Report an Identifier</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Desktop Layout Wrapper -->
+  <div class="desktop-layout-wrapper">
+
+    <!-- Desktop Sidebar -->
+    <aside class="desktop-sidebar">
+      <div class="desktop-brand">SCANGATE</div>
+      <a href="index.html" class="sidebar-nav-item">🏠 Home</a>
+      <a href="search.html" class="sidebar-nav-item">🔍 Search</a>
+      <a href="report.html" class="sidebar-nav-item active">⚠️ Report</a>
+      <a href="dispute.html" class="sidebar-nav-item">⚖️ Dispute</a>
+      <a href="notifications.html" class="sidebar-nav-item">🔔 Alerts</a>
+      <a href="profile.html" class="sidebar-nav-item">👤 Profile</a>
+      <a href="settings.html" class="sidebar-nav-item">⚙️ Settings</a>
+    </aside>
+
+    <!-- App Container -->
+    <div class="app-container">
+
+      <!-- Sticky Header -->
+      <header class="top-header">
+        <div class="brand-title">Report Identifier</div>
+        <div class="header-icons">
+          <span onclick="location.href='notifications.html'" aria-label="Notifications" role="button">🔔</span>
+          <span onclick="location.href='profile.html'" aria-label="User Profile" role="button">👤</span>
+        </div>
+      </header>
+
+      <!-- Scrollable Content -->
+      <main class="content-scrollable">
+
+        <div style="margin-bottom: 20px;">
+          <h2 style="font-size: 1.1rem; margin-bottom: 4px;">Help protect other users</h2>
+          <p class="text-muted" style="font-size: 0.85rem;">Submit a verified report against a fraudulent entity.</p>
+        </div>
+
+        <form id="report-form">
+
+          <!-- Identifier Type -->
+          <div class="form-group">
+            <label class="form-label">Identifier Type</label>
+            <select class="form-select" id="report-type">
+              <option value="upi">UPI ID</option>
+              <option value="phone">Phone Number</option>
+              <option value="email">Email Address</option>
+              <option value="website">Website / URL</option>
+            </select>
+          </div>
+
+          <!-- Identifier Value -->
+          <div class="form-group">
+            <label class="form-label">Identifier</label>
+            <input type="text" class="form-input" id="report-target" placeholder="Enter UPI / Phone / Email / URL" required>
+          </div>
+
+          <!-- Scam Category -->
+          <div class="form-group">
+            <label class="form-label">Category</label>
+            <select class="form-select" id="report-category">
+              <option value="payment_scam">Payment & Financial Scam</option>
+              <option value="phishing">Phishing / Fake Links</option>
+              <option value="identity_theft">Identity Theft / Impostor</option>
+              <option value="fake_service">Fake Product or Service</option>
+              <option value="other">Other Fraudulent Activity</option>
+            </select>
+          </div>
+
+          <!-- Description -->
+          <div class="form-group">
+            <label class="form-label">What happened?</label>
+            <textarea class="form-textarea" id="report-description" placeholder="Describe the incident clearly (e.g., transaction details, false promises)..." required></textarea>
+          </div>
+
+          <!-- Evidence Upload Box -->
+          <div class="form-group">
+            <label class="form-label">Evidence (Screenshots / Receipts)</label>
+            <div class="file-upload-box" onclick="document.getElementById('evidence-file').click()">
+              <div style="font-size: 1.5rem;">📁</div>
+              <div class="file-upload-text">Click to Upload Evidence (Images / PDFs)</div>
+              <input type="file" id="evidence-file" class="hidden" multiple accept="image/*,application/pdf">
+            </div>
+            <div id="file-list-display" class="text-muted mt-10" style="font-size: 0.75rem;"></div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn-primary mt-20">SUBMIT REPORT</button>
+
+          <p class="text-muted text-center mt-20" style="font-size: 0.75rem; text-align: center;">
+            Reports are thoroughly reviewed before being treated as verified risk. False reporting may lead to account penalties.
+          </p>
+
+        </form>
+
+      </main>
+
+      <!-- Mobile Bottom Navigation -->
+      <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+          <span class="nav-icon">🏠</span>
+          <span>Home</span>
+        </a>
+        <a href="search.html" class="nav-item">
+          <span class="nav-icon">🔍</span>
+          <span>Search</span>
+        </a>
+        <a href="report.html" class="nav-item active">
+          <span class="nav-icon">＋</span>
+          <span>Report</span>
+        </a>
+        <a href="dispute.html" class="nav-item">
+          <span class="nav-icon">⚖️</span>
+          <span>Dispute</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+          <span class="nav-icon">👤</span>
+          <span>Profile</span>
+        </a>
+      </nav>
+
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCANGATE | Terms & Privacy Policy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #090d16;
+            --bg-card: #111827;
+            --border-color: #1f293d;
+            --primary-color: #38bdf8;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .policy-wrapper {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .logo-badge {
+            font-family: 'JetBrains Mono', monospace;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--primary-color);
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 16px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        .policy-content {
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 10px;
+            margin-bottom: 25px;
+            color: #d1d5db;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .policy-content::-webkit-scrollbar {
+            width: 5px;
+        }
+        .policy-content::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 10px;
+        }
+
+        h3 {
+            color: var(--primary-color);
+            font-size: 15px;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+
+        ul {
+            padding-left: 18px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--border-color);
+            margin: 20px 0;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 11px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--text-muted);
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            border-color: #4b5563;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="policy-wrapper">
+        <div class="logo-badge">LEGAL & COMPLIANCE</div>
+        <h1>Terms & Privacy Policy</h1>
+        <p class="subtitle">Please review our guidelines before using SCANGATE intelligence lookup.</p>
+        
+        <div class="policy-content">
+            <h3>1. Terms of Service</h3>
+            <ul>
+                <li><strong>Educational & Intelligence Purpose:</strong> SCANGATE is designed strictly as a threat intelligence and risk assessment platform to help users identify potential cyber-frauds.</li>
+                <li><strong>No Absolute Guarantee:</strong> Threat landscapes change dynamically. The platform provides risk indicators based on available data feeds but does not offer 100% absolute guarantees on individual lookups.</li>
+                <li><strong>User Responsibility:</strong> Any misuse of the platform data or attempting to bypass security infrastructure will result in immediate account termination.</li>
+            </ul>
+
+            <h3>2. Privacy Policy</h3>
+            <ul>
+                <li><strong>Data Protection:</strong> We securely handle query parameters and session tokens necessary for delivering threat analysis reports.</li>
+                <li><strong>No Third-Party Sharing:</strong> User search history and personal credentials are strictly protected and never sold or leaked to external commercial brokers.</li>
+            </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Single-Line Bottom Action Buttons -->
+        <div class="action-buttons">
+            <button class="btn" onclick="location.href='checkout.html'">Back to Checkout</button>
+            <button class="btn" onclick="location.href='index.html'">Home Page</button>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCANGATE - Settings</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Desktop Layout Wrapper -->
+  <div class="desktop-layout-wrapper">
+
+    <!-- Desktop Sidebar -->
+    <aside class="desktop-sidebar">
+      <div class="desktop-brand">SCANGATE</div>
+      <a href="index.html" class="sidebar-nav-item">🏠 Home</a>
+      <a href="search.html" class="sidebar-nav-item">🔍 Search</a>
+      <a href="report.html" class="sidebar-nav-item">⚠️ Report</a>
+      <a href="dispute.html" class="sidebar-nav-item">⚖️ Dispute</a>
+      <a href="notifications.html" class="sidebar-nav-item">🔔 Alerts</a>
+      <a href="profile.html" class="sidebar-nav-item">👤 Profile</a>
+      <a href="settings.html" class="sidebar-nav-item active">⚙️ Settings</a>
+    </aside>
+
+    <!-- App Container -->
+    <div class="app-container">
+
+      <!-- Sticky Header -->
+      <header class="top-header">
+        <div class="brand-title">App Settings</div>
+        <div class="header-icons">
+          <span onclick="location.href='notifications.html'" aria-label="Notifications" role="button">🔔</span>
+          <span onclick="location.href='profile.html'" aria-label="User Profile" role="button">👤</span>
+        </div>
+      </header>
+
+      <!-- Scrollable Content -->
+      <main class="content-scrollable">
+
+        <!-- Preferences Section -->
+        <div class="section-title">Preferences</div>
+
+        <div class="sc-card mb-15">
+          <div class="flex-between">
+            <div>
+              <div style="font-weight: 600; font-size: 0.9rem;">Dark Theme</div>
+              <div class="text-muted" style="font-size: 0.75rem;">Optimized for secure browsing</div>
+            </div>
+            <input type="checkbox" id="theme-toggle" checked style="cursor: pointer;">
+          </div>
+        </div>
+
+        <div class="sc-card mb-20">
+          <div class="flex-between">
+            <div>
+              <div style="font-weight: 600; font-size: 0.9rem;">Push Notifications</div>
+              <div class="text-muted" style="font-size: 0.75rem;">Alerts for watchlist & reports</div>
+            </div>
+            <input type="checkbox" id="notif-toggle" checked style="cursor: pointer;">
+          </div>
+        </div>
+
+        <!-- Security Section -->
+        <div class="section-title">Security & Account</div>
+
+        <div class="sc-card mb-15" style="cursor: pointer;" onclick="alert('Password reset link sent to email!')">
+          <div class="flex-between">
+            <span style="font-weight: 600; font-size: 0.9rem;">Reset Password</span>
+            <span class="text-muted">→</span>
+          </div>
+        </div>
+
+        <div class="sc-card mb-20" style="cursor: pointer;" onclick="alert('Privacy policy opened.')">
+          <div class="flex-between">
+            <span style="font-weight: 600; font-size: 0.9rem;">Privacy & Data Policy</span>
+            <span class="text-muted">→</span>
+          </div>
+        </div>
+
+        <!-- App Info -->
+        <div class="text-center text-muted" style="font-size: 0.75rem; margin-top: 30px;">
+          SCANGATE v1.0.0<br>
+          Secure Threat Intelligence & Verification Platform
+        </div>
+
+      </main>
+
+      <!-- Mobile Bottom Navigation -->
+      <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+          <span class="nav-icon">🏠</span>
+          <span>Home</span>
+        </a>
+        <a href="search.html" class="nav-item">
+          <span class="nav-icon">🔍</span>
+          <span>Search</span>
+        </a>
+        <a href="report.html" class="nav-item">
+          <span class="nav-icon">＋</span>
+          <span>Report</span>
+        </a>
+        <a href="dispute.html" class="nav-item">
+          <span class="nav-icon">⚖️</span>
+          <span>Dispute</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+          <span class="nav-icon">👤</span>
+          <span>Profile</span>
+        </a>
+      </nav>
+
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCANGATE | Cyber War Room Feed</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .cyber-glow { box-shadow: 0 0 25px -5px rgba(59, 130, 246, 0.15); }
+        .bg-grid { background-image: radial-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px); background-size: 24px 24px; }
+        /* Hide scrollbar for stories */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen pb-20 bg-grid">
+
+    <!-- Top App Header (Instagram Style) -->
+    <header class="border-b border-slate-900 bg-slate-950/80 backdrop-blur-xl sticky top-0 z-50 px-4 py-3 flex justify-between items-center">
+        <h1 class="text-xl font-black tracking-wider text-white">SCAN<span class="text-blue-500">GATE</span></h1>
+        <div class="flex items-center space-x-4">
+            <a href="search.html" class="text-slate-400 hover:text-white transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            </a>
+            <a href="notifications.html" class="text-slate-400 hover:text-white transition-colors relative">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                <span class="absolute top-0 right-0 w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Top Stories / Active Nodes Bar -->
+    <section class="py-3 px-4 border-b border-slate-900 bg-slate-950/50">
+        <div class="flex space-x-4 overflow-x-auto no-scrollbar">
+            <!-- Story Item -->
+            <div class="flex flex-col items-center space-y-1 flex-shrink-0 cursor-pointer">
+                <div class="w-14 h-14 rounded-full p-[2px] bg-gradient-to-tr from-blue-600 to-indigo-400">
+                    <div class="w-full h-full bg-slate-900 rounded-full flex items-center justify-center text-xs font-bold text-blue-400 font-mono">NODE</div>
+                </div>
+                <span class="text-[10px] text-slate-400">Global API</span>
+            </div>
+            <!-- More dynamic nodes can be injected here -->
+        </div>
+    </section>
+
+    <!-- Main Content Feed -->
+    <main class="max-w-xl mx-auto px-2 py-4 space-y-6" id="feedContainer">
+        <!-- Dynamic Report Post Card Example -->
+        <article class="bg-slate-900/80 border border-slate-800/80 rounded-2xl cyber-glow overflow-hidden backdrop-blur-md">
+            <!-- Post Header -->
+            <div class="flex items-center justify-between px-4 py-3 border-b border-slate-800/50">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-full bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-xs font-bold text-blue-400 font-mono">SG</div>
+                    <div>
+                        <h3 class="text-xs font-bold text-white font-mono">upi_fraud_node_01</h3>
+                        <p class="text-[10px] text-slate-500">Verified Threat Alert</p>
+                    </div>
+                </div>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-red-500/10 border border-red-500/20 text-red-400 font-mono">HIGH RISK</span>
+            </div>
+
+            <!-- Post Body / Evidence Container -->
+            <div class="p-4 bg-slate-950/40">
+                <p class="text-xs text-slate-300 mb-2 font-mono"><strong class="text-slate-400">Target Identifier:</strong> scammer@okhdfc</p>
+                <p class="text-xs text-slate-400">Reported for fake merchant checkout scam. Multiple user complaints registered.</p>
+            </div>
+
+            <!-- Post Action Bar (Instagram style actions) -->
+            <div class="px-4 py-3 flex items-center justify-between border-t border-slate-800/50 text-slate-400 text-xs">
+                <div class="flex items-center space-x-4">
+                    <button class="flex items-center space-x-1 hover:text-blue-400 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h47v14a2 2 0 01-2 2h-7L9 20v-5.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9h-2"/></svg>
+                        <span>Verify (24)</span>
+                    </button>
+                    <button class="flex items-center space-x-1 hover:text-blue-400 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                        <span>Dispute</span>
+                    </button>
+                </div>
+                <span class="text-[10px] text-slate-600 font-mono">ID: #REP-8892</span>
+            </div>
+        </article>
+    </main>
+
+    <!-- Instagram Style Fixed Bottom Navigation Bar -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-slate-950/90 border-t border-slate-900 backdrop-blur-xl z-50 px-6 py-3 flex justify-between items-center max-w-xl mx-auto rounded-t-2xl">
+        <a href="dashboard.html" class="text-blue-500">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        </a>
+        <a href="search.html" class="text-slate-400 hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </a>
+        <a href="report.html" class="bg-blue-600 text-white p-2.5 rounded-full shadow-lg shadow-blue-900/50 hover:bg-blue-500 transition-all">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+        </a>
+        <a href="dispute.html" class="text-slate-400 hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+        </a>
+        <a href="settings.html" class="text-slate-400 hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+        </a>
+    </nav>
+
+    <script type="module" src="dashboard.js"></script>
+</body>
+</html>
